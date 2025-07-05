@@ -14,6 +14,11 @@ services:
       - db-data:/var/lib/postgresql/data
     networks:
       - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   backend:
     build:
@@ -21,6 +26,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
+    restart: always
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__Default: Host=db;Port=5432;Database=localizationdb;Username=postgres;Password=postgres
