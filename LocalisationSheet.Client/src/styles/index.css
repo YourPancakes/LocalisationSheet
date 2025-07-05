@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #bbbed8;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.main-container {
+  width: 1600px;
+  margin: 40px auto 0 auto;
+  background: transparent;
+}
+
+.table-wrap {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.table-scroll {
+  max-height: 700px;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a4a6df #bbbed8;
+}
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  background: transparent;
+}
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #a4a6df;
+  border-radius: 4px;
+}
+
+.table-scroll:has(table)::-webkit-scrollbar:horizontal:single-button:decrement,
+.table-scroll:has(table)::-webkit-scrollbar:vertical:single-button:decrement {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: transparent;
+}
+
+th {
+  border: 1px solid #a4a6df;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-family: inherit;
+  background: #d7d9e9;
+}
+
+td {
+  border: 1px solid #a4a6df;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-family: inherit;
+  background: #bbbed8 !important;
+}
+
+#add-row, #add-row-cell {
+  background: #d7d9e9 !important;
+}
+
+#rows-per-page {
+  background: #bbbed8 !important;
+}
+
+input, select, button {
+  border: 1px solid #a4a6df;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+button {
+  background: #fff;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #a4a6df;
+  background: #fff;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease-in-out;
+  box-shadow: none;
+}
+.nav-btn span {
+  font-size: 28px;
+  line-height: 1;
+}
+.nav-btn:hover:not(:disabled) {
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+#col-popup {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 200px;
+}
+
+.close-btn {
+  margin-left: 0.5rem;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 18px;
+}
+.close-btn:hover {
+  color: #dc2626;
+}
+
+.delete-btn {
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 20px;
+  background: #fff;
+  border: 1px solid #a4a6df;
+  border-radius: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.delete-btn:hover {
+  color: #991b1b;
+}
+
+#add-lang-header {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  background: #fff;
+}
+
+.editable {
+  background: #bbbed8 !important;
+}
+td.editable[contenteditable] {
+  outline: 2px solid #6b7280;
+  cursor: text;
+}
+
+.search-nice {
+  border-radius: 18px;
+  background: #f7f7fa;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.06);
+  border: 1px solid #a4a6df;
+  padding: 0 16px;
+  height: 40px;
+  font-size: 16px;
+  transition: box-shadow 0.2s;
+}
+.search-nice:focus {
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
+  border-color: #6b7280;
+  }
+
+table td, table th, table tr {
+  cursor: default !important;
+}
+td.editable {
+  cursor: pointer !important;
+  }
+button, .close-btn, .delete-btn {
+  cursor: pointer !important;
+}
+
+.error-message {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.error-message p {
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+
+.error-message button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-message button:hover {
+  background-color: #b91c1c;
+}
