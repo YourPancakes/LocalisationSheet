@@ -36,7 +36,7 @@ export const TableRow: React.FC<TableRowProps> = ({
       <td className="text-center">
         <button
           onClick={() => onDeleteRow(row.id)}
-          className="delete-btn"
+          className="text-[#dc2626] cursor-pointer text-[20px] bg-[#fff] border-[1px] border-[solid] border-[#a4a6df] rounded-none w-[32px] h-[32px] flex items-center justify-center mx-[auto] my-[0]"
           title="Delete row"
         >
           &minus;

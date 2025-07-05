@@ -39,7 +39,7 @@ export const LanguageModal: React.FC<LanguageModalProps> = ({
   return (
     <div 
       id="col-popup"
-      className="bg-white p-4 rounded-lg shadow-lg"
+      className="bg-[#fff] p-4 rounded-lg [box-shadow:0_10px_15px_-3px_rgba(0,0,0,0.1),_0_4px_6px_-2px_rgba(0,0,0,0.05)] hidden absolute w-[200px]"
       style={{
         position: 'absolute',
         top: position.top,

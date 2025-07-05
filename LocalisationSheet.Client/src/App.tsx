@@ -11,8 +11,8 @@ function App() {
   } = useAppState();
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <div className="main-container">
+    <div className="min-h-screen">
+      <div className="main-container" style={{ width: '85%', margin: '40px auto 0 auto' }}>
         <div className="mb-4">
           <SearchInput
             value={searchQuery}
@@ -22,7 +22,7 @@ function App() {
         <div className="mb-4">
           <Pagination {...paginationProps} />
         </div>
-        <div className="table-wrap">
+        <div className="bg-transparent rounded-none [box-shadow:none] p-0">
           {isLoading ? (
             <div className="text-center py-10">Loading...</div>
           ) : (

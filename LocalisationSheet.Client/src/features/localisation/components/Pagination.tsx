@@ -27,7 +27,8 @@ export const Pagination: React.FC<PaginationProps> = ({
         id="rows-per-page"
         value={rowsPerPage}
         onChange={(e) => onRowsPerPageChange(Number(e.target.value))}
-        style={{ marginLeft: 4, marginRight: 16, borderRadius: 0, border: '1px solid #a4a6df', height: 24 }}
+        className="border-[1px] border-[solid] border-[#a4a6df] rounded-none [box-shadow:none] outline-[none] [font-family:inherit] text-[16px] bg-[#bbbed8]"
+        style={{ marginLeft: 4, marginRight: 16, height: 24 }}
       >
         <option value={10}>10</option>
         <option value={20}>20</option>
@@ -42,18 +43,18 @@ export const Pagination: React.FC<PaginationProps> = ({
         id="prev-page"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1 || !hasData}
-        className="nav-btn"
+        className="flex items-center justify-center w-[40px] h-[40px] border-[1px] border-[solid] border-[#a4a6df] bg-[#fff] rounded-full cursor-pointer [transition:box-shadow_0.15s_ease-in-out] [box-shadow:none]"
         style={{ marginRight: 8 }}
       >
-        <span>&lt;</span>
+        <span className="text-[28px] leading-none">&lt;</span>
       </button>
       <button
         id="next-page"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages || !hasData}
-        className="nav-btn"
+        className="flex items-center justify-center w-[40px] h-[40px] border-[1px] border-[solid] border-[#a4a6df] bg-[#fff] rounded-full cursor-pointer [transition:box-shadow_0.15s_ease-in-out] [box-shadow:none]"
       >
-        <span>&gt;</span>
+        <span className="text-[28px] leading-none">&gt;</span>
       </button>
     </div>
   );

@@ -32,7 +32,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               <span>{language.name}</span>
               <button
                 onClick={() => onRemoveLanguage(language.code)}
-                className="close-btn"
+                className="ml-2 text-[#ef4444] cursor-pointer text-[18px]"
                 title={`Remove ${language.name}`}
               >
                 &times;
@@ -42,7 +42,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
         ))}
         <th
           id="add-lang-header"
-          className={`text-lg font-bold bg-white relative ${
+          className={`cursor-pointer text-[18px] font-bold relative ${
             availableLanguages.length && !showLangSelector ? 'cursor-pointer' : 'cursor-not-allowed'
           }`}
           onClick={availableLanguages.length && !showLangSelector ? onAddLanguage : undefined}

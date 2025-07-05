@@ -73,16 +73,16 @@ export const LocalizationTable: React.FC<LocalizationTableProps> = ({
 
   if (error) {
     return (
-      <div className="error-message">
-        <p>Error loading data: {error.message}</p>
+      <div className="bg-[#fef2f2] border-[1px] border-[solid] border-[#fecaca] rounded-[8px] p-[16px] mx-[0] my-[20px] text-center">
+        <p className="text-[#dc2626] mb-3">Error loading data: {error.message}</p>
         <button onClick={() => window.location.reload()}>Retry</button>
       </div>
     );
   }
 
   return (
-    <div className="table-wrap relative">
-      <div className="table-scroll">
+    <div className="bg-transparent rounded-none [box-shadow:none] p-0 relative">
+      <div className="max-h-[700px] max-w-full overflow-x-auto overflow-y-auto">
         <table>
           <TableHeader
             languages={languages}
@@ -104,11 +104,11 @@ export const LocalizationTable: React.FC<LocalizationTableProps> = ({
                 onTranslationChange={handleTranslationChange}
               />
             ))}
-            <tr id="add-row" className="bg-gray-200">
+            <tr id="add-row" className="bg-[#d7d9e9]">
               <td
                 id="add-row-cell"
                 colSpan={(Array.isArray(languages) ? languages.length : 0) + 3}
-                className="p-0 bg-gray-200"
+                className="p-0 bg-[#d7d9e9]"
               >
                 <button
                   id="add-button"
