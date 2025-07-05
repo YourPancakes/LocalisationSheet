@@ -27,7 +27,7 @@ namespace LocalisationSheet.Server.Infrastructure.Repository
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(filterKey))
-                keysQuery = keysQuery.Where(k => k.Name.Contains(filterKey));
+                keysQuery = keysQuery.Where(k => k.Name.ToLower().Contains(filterKey.ToLower()));
 
             var keys = await keysQuery
                 .OrderBy(k => k.Name)
@@ -53,7 +53,7 @@ namespace LocalisationSheet.Server.Infrastructure.Repository
                 {
                     foreach (var t in key.Translations)
                     {
-                        if (t.Language != null && (string.IsNullOrWhiteSpace(filterLanguage) || t.Language.Code.Contains(filterLanguage)))
+                        if (t.Language != null && (string.IsNullOrWhiteSpace(filterLanguage) || t.Language.Code.ToLower().Contains(filterLanguage.ToLower())))
                         {
                             result.Add(t);
                         }

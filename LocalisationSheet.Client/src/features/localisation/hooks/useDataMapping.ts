@@ -1,15 +1,9 @@
 import { useMemo, useCallback } from 'react';
+import { useKeysMap } from './useKeysMap';
 import type { LocalizationRow, KeyDto, TranslationDto } from '../types';
 
 export const useDataMapping = (translations: TranslationDto[], keys: KeyDto[]) => {
-  const keysMap = useMemo(() => {
-    const map = new Map<string, KeyDto>();
-    keys.forEach(key => {
-      map.set(key.id, key);
-      map.set(key.name, key);
-    });
-    return map;
-  }, [keys]);
+  const keysMap = useKeysMap(keys);
 
   const rows: LocalizationRow[] = useMemo(() => 
     translations.map(translation => {

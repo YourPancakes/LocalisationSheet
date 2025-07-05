@@ -6,4 +6,5 @@ export { useKeyOperations } from './useKeyOperations';
 export { useLanguageOperations } from './useLanguageOperations';
 export { useTranslationOperations } from './useTranslationOperations';
 export { usePaginationOperations } from './usePaginationOperations';
-export { useSearchOperations } from './useSearchOperations'; 
+export { useSearchOperations } from './useSearchOperations';
+export { useKeysMap } from './useKeysMap'; 

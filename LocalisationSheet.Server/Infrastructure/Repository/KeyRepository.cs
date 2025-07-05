@@ -29,7 +29,7 @@ namespace LocalisationSheet.Server.Infrastructure.Repository
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(filterKey))
-                query = query.Where(k => k.Name.Contains(filterKey));
+                query = query.Where(k => k.Name.ToLower().Contains(filterKey.ToLower()));
 
             return await query
                 .OrderBy(k => k.Name)

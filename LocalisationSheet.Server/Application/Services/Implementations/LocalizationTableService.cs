@@ -20,7 +20,7 @@ public class LocalizationTableService : ILocalizationTableService
         {
             KeyName = k.Name,
             Translations = (k.Translations ?? new List<Translation>())
-                .Where(t => t.Language != null && (string.IsNullOrWhiteSpace(filterLanguage) || t.Language.Code.Contains(filterLanguage)))
+                .Where(t => t.Language != null && (string.IsNullOrWhiteSpace(filterLanguage) || t.Language.Code.ToLower().Contains(filterLanguage.ToLower())))
                 .Select(t => new TranslationItemDto
                 {
                     Code = t.Language!.Code,

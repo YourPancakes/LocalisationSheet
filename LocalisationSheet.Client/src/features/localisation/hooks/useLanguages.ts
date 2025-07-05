@@ -1,4 +1,4 @@
-import { useCustomQuery } from './useQueryClient';
+import { useQuery } from '@tanstack/react-query';
 import { getLanguages, getAvailableLanguages } from '../api';
 import type { Language } from '../types';
 
@@ -8,7 +8,7 @@ export const useLanguages = () => {
     isLoading: isLanguagesLoading,
     error: languagesError,
     refetch: refetchLanguages,
-  } = useCustomQuery<Language[]>({
+  } = useQuery<Language[]>({
     queryKey: ['languages'],
     queryFn: getLanguages,
   });
@@ -17,7 +17,7 @@ export const useLanguages = () => {
     data: availableLanguages = [],
     isLoading: isAvailableLanguagesLoading,
     error: availableLanguagesError,
-  } = useCustomQuery<Language[]>({
+  } = useQuery<Language[]>({
     queryKey: ['availableLanguages'],
     queryFn: getAvailableLanguages,
     staleTime: 0,

@@ -1,7 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import { createKey, deleteKey as deleteKeyApi, updateKey as updateKeyApi } from '../api';
 import { validateGuid } from '../utils/validation';
+import { useKeysMap } from './useKeysMap';
 import type { IKeyOperations, CreateKeyDto, KeyDto } from '../types';
 
 export const useKeyOperations = (keys: KeyDto[]): IKeyOperations => {
@@ -15,14 +16,7 @@ export const useKeyOperations = (keys: KeyDto[]): IKeyOperations => {
     },
   });
 
-  const keysMap = useMemo(() => {
-    const map = new Map<string, KeyDto>();
-    keys.forEach(key => {
-      map.set(key.id, key);
-      map.set(key.name, key);
-    });
-    return map;
-  }, [keys]);
+  const keysMap = useKeysMap(keys);
 
   const findKeyId = useCallback((id: string): string | null => {
     if (!id) return null;
