@@ -41,7 +41,7 @@ A full-stack localization management system built with React frontend and .NET b
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/YourPancakes/LocalisationSheet
 cd LocalisationSheet
 
 # Start all services
