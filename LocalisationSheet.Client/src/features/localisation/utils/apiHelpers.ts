@@ -6,7 +6,7 @@ export const extractData = <T>(response: AxiosResponse<T>): T => response.data;
 export const createApiCall = <T>(apiCall: Promise<AxiosResponse<T>>): Promise<T> => 
   apiCall.then(extractData);
 
-export const createMutationConfig = (queryKeys: string[]) => {
+export const useMutationConfig = (queryKeys: string[]) => {
   const queryClient = useQueryClient();
   return {
     onSuccess: () => {

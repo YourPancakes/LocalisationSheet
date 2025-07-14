@@ -43,4 +43,4 @@ export const upsertTranslation = (keyId: string, languageId: string, data: Upser
   createApiCall(api.put(`/translations/${keyId}/${languageId}`, data));
 
 export const deleteTranslation = (keyId: string, languageId: string): Promise<void> => 
-  createApiCall(api.delete(`/translations/${keyId}/${languageId}`)); 
+  createApiCall(api.delete(`/translations/${keyId}/${languageId}`));

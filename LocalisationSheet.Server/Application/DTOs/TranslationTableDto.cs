@@ -1,8 +1,8 @@
 ﻿namespace LocalisationSheet.Server.Application.DTOs
 {
-    public class TranslationTableDto
+    public record TranslationTableDto
     {
         public string KeyName { get; set; } = default!;
-        public List<TranslationItemDto> Translations { get; set; } = new();
+        public IReadOnlyList<TranslationItemDto> Translations; //List<TranslationItemDto> Translations { get; init; } = new();
     }
 }

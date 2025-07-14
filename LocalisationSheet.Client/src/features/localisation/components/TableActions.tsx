@@ -11,6 +11,7 @@ export const useTableActions = ({
   keyOperations,
   onLanguageAdd,
 }: TableActionsProps) => {
+
   const handleAddRow = useCallback(async () => {
     const key = handleUserInput('Enter localization key:');
     if (key && key.trim()) {

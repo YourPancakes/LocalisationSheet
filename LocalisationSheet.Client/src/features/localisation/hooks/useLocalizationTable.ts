@@ -11,6 +11,7 @@ interface UseLocalizationTableParams {
 }
 
 export const useLocalizationTable = ({ pagination, searchQuery }: UseLocalizationTableParams) => {
+
   const { languages, availableLanguages, isLoading: isLanguagesLoading, error: languagesError } = useLanguages();
   const { keys, isLoading: isKeysLoading, error: keysError } = useKeys();
   const { translations, isLoading: isTranslationsLoading, error: translationsError } = useTranslations({

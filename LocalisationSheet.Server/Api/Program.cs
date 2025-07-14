@@ -77,14 +77,14 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = "swagger";
     });
 }
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseCors("AllowFrontend");
 
 app.UseRouting();
-app.UseMiddleware<ErrorHandlingMiddleware>();
 
-app.UseDefaultFiles();
-app.UseStaticFiles();
+//app.UseDefaultFiles();
+//app.UseStaticFiles();
 
 app.MapControllers();
 
