@@ -2,7 +2,7 @@
 
 A full-stack localization management system built with React frontend and .NET backend.
 
-## 🚀 Features
+## Features
 
 - **Multi-language Support**: Manage translations for multiple languages
 - **Real-time Editing**: Inline editing of translation values
@@ -12,7 +12,7 @@ A full-stack localization management system built with React frontend and .NET b
 - **Swagger Documentation**: Interactive API documentation
 - **Docker Support**: Easy deployment with Docker Compose
 
-## 🏗️ Architecture
+##️ Architecture
 
 ### Frontend
 - **React 18** with TypeScript
@@ -29,14 +29,14 @@ A full-stack localization management system built with React frontend and .NET b
 - **FluentValidation** for input validation
 - **Swagger/OpenAPI** for documentation
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **.NET 8 SDK**
 - **Node.js 20**
 - **Docker & Docker Compose** (for containerized deployment)
 - **PostgreSQL 14** (if running locally)
 
-## 🛠️ Quick Start
+## Quick Start
 
 
 ```bash
@@ -54,7 +54,7 @@ docker-compose up --build
 ```
 ```
 
-## 📚 API Endpoints
+## API Endpoints
 
 ### Languages
 - `GET /api/v1.0/languages` - Get all languages
